@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Lookup
+{% endblock %}
+
+{% block main %}
+
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <main class="container p-5">
+            {% block table %}{% endblock %}
+    </main>
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Portfolio
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Symbol</th>
+      <th scope="col">Price at Buy</th>
+      <th scope ="col">Current Price</th>
+      <th scope = "col">Percent Change</th>
+       <th scope="col">Shares Owned</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for r in rows %}
+
+    <tr>
+        <td> {{ r.symbol }} </td>
+        <td> {{ r.price }} </td>
+        <td> {{ r.cur_price}} </td>
+        <td> {{ r.pc_change}} </td>
+        <td> {{ r.shares }} </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+    </table>
+{% endblock %}

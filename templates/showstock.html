@@ -1,0 +1,24 @@
+{% extends "quote.html" %}
+
+{% block title %}
+    Stock Info
+{% endblock %}
+
+{% block table %}
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Company Name</th>
+          <th scope="col">Current Price</th>
+          <th scope="col">Symbol</th>
+        </tr>
+        </thead>
+        <tr>
+            <td> {{ name }}</td>
+            <td> {{ price | usd }}</td>
+            <td> {{ symbol }} </td>
+        </tr>
+        </table>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Info
+{% endblock %}
+
+{% block main %}
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Time</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Price</th>
+          <th scope ="col">Current Price</th>
+          <th scope="col">Transaction Type</th>
+           <th scope="col">Volume</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for r in rows %}
+        <tr>
+            <td> {{ r.transactionTime }} </td>
+            <td> {{ r. symbol }} </td>
+            <td> {{ r. price }} </td>
+            <td> xx </td>
+            {% if r.shares < 0 %}
+             <td> SELL </td>
+            {% else %}
+             <td> BUY </td>
+            {% endif %}
+            <td> {{ r.shares | abs }} </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+
+        </table>
+
+{% endblock %}

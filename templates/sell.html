@@ -8,6 +8,7 @@
 
     <form action="/sell" method="post">
         <div class="form-group">
+          Select a stock to sell:
             <select class "form-control" name="symbol">
                 <option disabled selected value>Symbol</option>
                 {% for symb in stocks_owned %}
